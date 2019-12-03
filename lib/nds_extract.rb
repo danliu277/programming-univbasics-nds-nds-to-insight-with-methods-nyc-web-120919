@@ -21,6 +21,7 @@ def directors_totals(nds)
     index2 = 0
     result.merge!(Hash[nds[index1][:name], sum])
   end
+  pp result
   return result
 end
 
