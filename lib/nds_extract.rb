@@ -19,7 +19,7 @@ def directors_totals(nds)
     end
     index1 += 1
     index2 = 0
-    result[nds[index1][:name] += sum]
+    result[nds[index1][:name] += sum
   end
   pp result
   return result
