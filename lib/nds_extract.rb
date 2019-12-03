@@ -6,22 +6,20 @@ require 'directors_database'
 # { directorOne => allTheMoneyTheyMade, ... }
 
 def directors_totals(nds)
-  result = {}
   index1 = 0
   index2 = 0
-  # pp nds[0]
+  result = {}
   
-  while nds[index1] do
+  while directors_database[index1]
     sum = 0
-    while nds[index1][:movies][index2] do
-      sum += nds[index1][:movies][index2][:worldwide_gross]
+    while directors_database[index1][:movies][index2]
+      sum += directors_database[index1][:movies][index2][:worldwide_gross]
       index2 += 1
     end
-    index1 += 1
+    result.merge!(Hash[directors_database[index1][:name], sum])
     index2 = 0
-    result.merge!(Hash[nds[index1][:name], sum])
+    index1 += 1
   end
-  pp result
   return result
 end
 
